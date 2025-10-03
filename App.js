@@ -1,10 +1,20 @@
-import HomeScreen from './src/screens/HomeScreen'
 import { CounterProvider } from './src/context/CounterContext'
+import AppNavigation from './src/navigation/AppNavigation'
+import { NomeProvider } from './src/context/NomeContext'
+import { ThemeProvider } from './src/context/ThemeContext'
 
-export default function App(){
-  return(
-    <CounterProvider>
-      <HomeScreen/>
-    </CounterProvider>
+export default function App() {
+  return (
+    <ThemeProvider>
+      <NomeProvider>
+        <CounterProvider>
+          <AppNavigation />
+        </CounterProvider>
+      </NomeProvider>
+    </ThemeProvider>
+
+
+
+
   )
 }
